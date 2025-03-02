@@ -69,4 +69,33 @@ curl -X POST "http://localhost:8080/books" -d "name=New Book" -H "Content-Type: 
 ## License
 This project is open-source and available under the MIT License.
 
+# Added JWT implementation ,use below information for testing with jwt token
+
+Test a Secured API with JWT Authentication
+Login and Get Token
+
+```sh
+curl -X POST http://localhost:8080/auth/login -H "Content-Type: application/json" -d "{\"username\":\"admin\", \"password\":\"password\"}"
+```
+🔹 This will return a JWT token in the response.
+
+Use Token to Access a Secure API
+
+```sh
+curl -X GET http://localhost:8080/protected-endpoint -H "Authorization: Bearer YOUR_JWT_TOKEN"
+
+```
+Replace YOUR_JWT_TOKEN with the actual token from the login response.
+
+📌 Useful curl Commands
+Command	Description
+```sh
+curl http://localhost:8080/api	Simple GET request
+curl -X POST <URL> -d "<data>"	Send POST request
+curl -X PUT <URL> -d "<data>"	Send PUT request
+curl -X DELETE <URL>	Send DELETE request
+curl -H "Authorization: Bearer <token>" <URL>	Send request with JWT token
+```
+
+
 
